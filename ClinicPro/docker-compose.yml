@@ -1,0 +1,9 @@
+services:
+  clinicpro.ui:
+    container_name: clinicpro.ui
+    image: blazor
+    build:
+      context: .
+      dockerfile: ClinicPro.UI/Dockerfile
+    ports:
+      - "5000:80"
