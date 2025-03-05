@@ -7,3 +7,18 @@ services:
       dockerfile: ClinicPro.UI/Dockerfile
     ports:
       - "5000:80"
+    environment:
+        - ASPNETCORE_ENVIRONMENT=Development
+        - ASPNETCORE_URLS=http://+:80
+  
+  clinicpro.api:
+    container_name: clinicpro.api
+    image: webapi
+    build:
+      context: .
+      dockerfile: ClinicPro.API/Dockerfile 
+    ports:
+      - "5001:81"  
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:81
